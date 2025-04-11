@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 func main() {
 	/*
 			String
@@ -40,4 +42,46 @@ func main() {
 		we should just use int unless we have a specific reason
 		to use a sized or unsigned integer type.
 	*/
+
+	/*
+		Byte and Rune
+		Golang has two additional integer types called byte and rune
+		that are aliases for uint8 and int32 data types respectively.
+	*/
+
+	var b byte = 'a'
+	var r rune = '🍕'
+
+	/*
+		Floating point
+		Next, we have floating point types
+		which are used to store numbers with a decimal component.
+	*/
+
+	var f32 float32 = 1.7812 // IEEE-754 32-bit
+	var f64 float64 = 3.1415 // IEEE-754 64-bit
+
+	/*
+		Complex
+		There are 2 complex types in Go.
+		complex128 where both real and imaginary parts are float64
+		complex64 where real and imaginary are float32.
+
+		We can define complex numbers either using the built-in complex function or as literals.
+	*/
+	var c1 complex128 = complex(10, 1)
+	var c2 complex64 = 12 + 4i
+
+	/*
+		Zero Values
+		In Go any variable declared without an explicit initial value are given their zero value.
+	*/
+	var integer int
+	var float float64
+	var boolean bool
+	var strings string
+
+	fmt.Printf("%v %v %v %q\n", integer, float, boolean, strings)
+	// Output : 0 0 false ""
+
 }
